@@ -8,6 +8,9 @@ class PopularMoviesController {
     constructor() {
         this.eventsMediatorObj = new EventsMediator()
         this.currentPage = new PopularMoviesPage(this.eventsMediatorObj)
+
+        console.log("sssssssss",this.currentPage._moviesList)
+
         this.casheElements()
         this.bindEvents()
 
@@ -21,7 +24,10 @@ class PopularMoviesController {
 
     }
     bindEvents() {
+
         this.$nextBtn.on("click", function () {
+            console.log("ddddddddd",this.currentPage._moviesList)
+
             this.currentPage.pageNum+=1
             this.eventsMediatorObj.emit("changePage",  this.currentPage.pageNum )
 
@@ -56,4 +62,8 @@ class PopularMoviesController {
 
 
 var obj = new PopularMoviesController()
+
+$(document).ready(function() {
+    $(".modal-img").css("height", $(".movieInfo").height());
+  });
 
