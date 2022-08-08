@@ -111,7 +111,7 @@ export class PopularMoviesPage {
         this.$moviesContainer.html("")
         for (let movie of this._moviesList) {
             this.$moviesContainer.append(`
-        <div class="col-sm-10 col-md-5 col-lg-3 card m-2"  id=${movie.id.toString()} data-bs-toggle="modal" data-bs-target=${"#" + "target" + movie.id.toString()} >
+        <div class="col-sm-10 col-md-5 col-lg-2 card m-2"  id=${movie.id.toString()} data-bs-toggle="modal" data-bs-target=${"#" + "target" + movie.id.toString()} >
             <img src="https://image.tmdb.org/t/p/original${movie.poster_path}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title ">${movie.original_title}</h5>
